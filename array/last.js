@@ -1,13 +1,13 @@
-const first = function (array, num) {
+function last(array, num) {
     if (!Array.isArray((array))) {
         throw new Error(`期望 array 是一个数组，但是得到的是 ${typeof array}`)
     }
 
     if (!num || num === 1) {
-        return array[0]
+        return array[array.length - 1]
     }
 
-    return array.slice(0, num)
+    return array.slice(-Math.abs(num))
 }
 
-module.exports = first
+module.exports = last
